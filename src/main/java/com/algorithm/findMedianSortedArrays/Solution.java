@@ -3,6 +3,9 @@ package com.algorithm.findMedianSortedArrays;
 public class Solution {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        /**
+         * 先判空的情况
+         */
         int n = nums1.length;
         int m = nums2.length;
         if (n == 0 && m == 0) {
@@ -15,6 +18,10 @@ public class Solution {
             return findSingleMedian(nums1);
         }
 
+
+        /**
+         * 半数组大小的判定
+         */
         int s = n + m;
 
         //是否是奇数
@@ -27,6 +34,10 @@ public class Solution {
         //排序到哪个位置
         int  p = s / 2;
 
+
+        /**
+         * 两数组各设置一个开始位置的指针，逐一比较把较小的放入半数组
+         */
         int[] halfNums = new int[p + 1];
 
         int i = 0, j = 0, k = 0;
@@ -40,6 +51,9 @@ public class Solution {
             }
         }
 
+        /**
+         * 如果其中一个没有数了，半数组却未满，在剩余一个数组中截取半数组需要个数的数放入半数组
+         */
         //回退到k的赋值位置
         k--;
 
