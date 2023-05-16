@@ -17,9 +17,6 @@ public class Solution {
 
         int s = n + m;
 
-        //排序到哪个位置
-        int p;
-
         //是否是奇数
         boolean isOddNumber = false;
 
@@ -27,7 +24,8 @@ public class Solution {
             isOddNumber = true;
 
         }
-        p = s / 2;
+        //排序到哪个位置
+        int  p = s / 2;
 
         int[] halfNums = new int[p + 1];
 
@@ -41,8 +39,13 @@ public class Solution {
                 j++;
             }
         }
+
+        //回退到k的赋值位置
         k--;
+
+        //如果半数组没有赋值到最后一位
         if (k < p) {
+            //如果是因为nums2用完了
             if (j == m) {
                 for (int l = k + 1; l < p + 1; l++, i++) {
                     halfNums[l] = nums1[i];
