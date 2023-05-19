@@ -1,4 +1,4 @@
-package longestPalindrome;
+package com.algorithm.longestPalindrome;
 
 public class Solution {
 
